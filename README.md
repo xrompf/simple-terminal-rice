@@ -1,3 +1,5 @@
+![Alt text](images/Nice.png)
+
 idk follow me on tiktok @xrompf and give this repo a star if you like it 
 Dependancies
 - foot 
@@ -13,3 +15,4 @@ tested os/enviornment
 what i reccomend (not my software and also support them by staring their project etc)
 - the astrasuite ecosystem 
 - caelestia sddm theme
+
