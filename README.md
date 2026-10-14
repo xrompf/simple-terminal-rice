@@ -1,4 +1,4 @@
-![Alt text](images/Nice.png)
+![it should look something like this](images/nice.png)
 
 idk follow me on tiktok @xrompf and give this repo a star if you like it 
 Dependancies
