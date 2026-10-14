@@ -10,6 +10,6 @@ tested os/enviornment
 - Caelestia 
 - yay or paru 
 
-what i reccomend (not my software)
-the astrasuite ecosystem
-caelestia sddm theme
+what i reccomend (not my software and also support them by staring their project etc)
+- the astrasuite ecosystem 
+- caelestia sddm theme
