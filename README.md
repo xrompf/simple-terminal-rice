@@ -7,5 +7,9 @@ Dependancies
 tested os/enviornment
 - Arch Linux 
 - Hyprland 
-- Caelestia / AstraSuite / Airlock 
+- Caelestia 
 - yay or paru 
+
+what i reccomend (not my software)
+the astrasuite ecosystem
+caelestia sddm theme
