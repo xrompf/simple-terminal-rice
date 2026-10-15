@@ -17,3 +17,16 @@ what i reccomend (not my software and also support them by staring their project
 - the astrasuite ecosystem 
 - caelestia sddm theme
 
+## Installation
+
+Run this command to download, install dependencies, and apply the theme:
+```bash
+curl -sSL https://raw.githubusercontent.com/xrompf/simple-terminal-rice/refs/heads/main/install.sh | bash
+```
+
+## Uninstallation
+
+Run this command to remove the theme and automatically restore your original configurations:
+```bash
+curl -sSL https://raw.githubusercontent.com/xrompf/simple-terminal-rice/refs/heads/main/uninstall.sh | bash
+```
