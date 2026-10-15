@@ -49,15 +49,15 @@ link_configs() {
 
         # Skip non-config metadata
         [[ "$item_name" =~ ^\. ]] && continue
-[[ "$item_name" == "README.md" || "$item_name" == "LICENSE" || "$item_name" == "install.sh" ]] && continue
+        [[ "$item_name" == "README.md" || "$item_name" == "LICENSE" || "$item_name" == "install.sh" ]] && continue
 
         target="$CONFIG_DEST/$item_name"
 
         # Backup existing target if it isn't already a symlink pointing to our repo
-        if [ -e "$target" ] \vert{}\vert{} [ -L "$target" ]; then
+        if [ -e "$target" ] || [ -L "$target" ]; then
             if [ "$(readlink -f "$target")" != "$(readlink -f "$item")" ]; then
                 backup="$target.bak.$(date +%Y%m%d_%H%M%S)"
-                echo -e "${YELLOW}--> Backing up$target to $backup${NC}"
+                echo -e "${YELLOW}--> Backing up $target to $backup${NC}"
                 mv "$target" "$backup"
                 ln -s "$item" "$target"
             fi
@@ -72,10 +72,10 @@ link_configs() {
             target="$HOME/.$dotfile"
             source_file="$CLONE_DIR/.$dotfile"
 
-            if [ -e "$target" ] \vert{}\vert{} [ -L "$target" ]; then
+            if [ -e "$target" ] || [ -L "$target" ]; then
                 if [ "$(readlink -f "$target")" != "$(readlink -f "$source_file")" ]; then
                     backup="$target.bak.$(date +%Y%m%d_%H%M%S)"
-                    echo -e "${YELLOW}--> Backing up$target to $backup${NC}"
+                    echo -e "${YELLOW}--> Backing up $target to $backup${NC}"
                     mv "$target" "$backup"
                     ln -s "$source_file" "$target"
                 fi
@@ -142,13 +142,13 @@ do_uninstall() {
         fi
     done
 
-    # Optional: Restore recent backups if they exist
+    # Restore recent backups if they exist
     echo -e "${BLUE}==> Checking for backups to restore...${NC}"
     for backup in "$CONFIG_DEST"/*.bak.*; do
         if [ -e "$backup" ]; then
             original="${backup%.bak.*}"
             if [ ! -e "$original" ]; then
-                echo -e "${GREEN}--> Restoring$backup -> $original${NC}"
+                echo -e "${GREEN}--> Restoring $backup -> $original${NC}"
                 mv "$backup" "$original"
             fi
         fi
@@ -159,6 +159,9 @@ do_uninstall() {
 
 # --- MENU INTERFACE ---
 show_menu() {
+    # Direct stdin to terminal so reading input works when piped via curl
+    exec < /dev/tty
+
     clear
     echo "=================================================="
     echo "       Simple Terminal Rice Setup Manager         "
