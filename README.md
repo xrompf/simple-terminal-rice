@@ -8,7 +8,7 @@ what i reccomend (not my software and also support them by staring their project
 - caelestia sddm theme
 
 ## Installation wizard
-(supports most package installers)
+(only supports pacman, apt, dnf, brew at the moment)
 Installation wizard script:
 ```bash
 curl -sSL https://raw.githubusercontent.com/xrompf/simple-terminal-rice/refs/heads/main/install.sh | bash
