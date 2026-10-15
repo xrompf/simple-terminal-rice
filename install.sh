@@ -49,7 +49,7 @@ link_configs() {
 
         # Skip non-config metadata
         [[ "$item_name" =~ ^\. ]] && continue
-        [[ "$item_name" == "README.md" || "$item_name" == "LICENSE" \vert{}\vert{} "$item_name" == "install.sh" ]] && continue
+[[ "$item_name" == "README.md" || "$item_name" == "LICENSE" || "$item_name" == "install.sh" ]] && continue
 
         target="$CONFIG_DEST/$item_name"
 
